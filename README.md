@@ -1,13 +1,13 @@
 # clearcreditcoach.com
 
-Marketing website for **Clear Credit Coach**: the credit-education app (coming soon to iOS and Android) and 1-on-1 credit coaching.
+Marketing website for **Clear Credit Coach**, an education-only credit app (coming soon to iOS and Android): a free tier plus a Premium subscription with self-help tools. Clear Credit Coach does not offer coaching or credit repair services, so site copy must sell understanding, learning, planning, and tools, never outcomes (see the federal Credit Repair Organizations Act).
 
 Plain static HTML/CSS/JS with no build step, deployed to GitHub Pages by `.github/workflows/pages.yml` on every push to `main`.
 
 | Path | Page |
 |---|---|
-| `/` | Home: hero, audiences, app features, Free vs. Premium, coaching, waitlist, FAQ |
-| `/coaching/` | 1-on-1 coaching + "Book a free consultation" (**draft, pending attorney review**) |
+| `/` | Home: hero, learning paths, app features, Free vs. Premium, education-only section, waitlist, FAQ |
+| `/coaching/` | Retired. A `noindex` meta-refresh stub that sends old links to the homepage |
 | `/privacy/` | Privacy Policy (**DRAFT template, pending legal review**) |
 | `/terms/` | Terms of Use (**DRAFT template, pending legal review**) |
 
@@ -18,10 +18,9 @@ Plain static HTML/CSS/JS with no build step, deployed to GitHub Pages by `.githu
 Search the repo for `TODO`.
 
 - **Waitlist form** (`index.html`, `assets/js/main.js`): it's a placeholder that opens the visitor's email app (mailto). It does not store emails. Replace it with a real form or email-marketing embed.
-- **Booking link** (`coaching/index.html`, both "Book a free consultation" buttons): currently a `mailto:`. Replace it with your booking tool URL (e.g., Calendly).
-- **Contact email** `hello@clearcreditcoach.com` (all pages): confirm that this mailbox exists in Google Workspace, or change it.
+- **Contact email** `hello@clearcreditcoach.com` (all pages): being added as a Google Workspace alias.
 - **Privacy / Terms**: effective dates, legal business name, mailing address, governing-law state, retention periods, and attorney review. Remove the draft banner once they're final.
-- **Coaching page**: attorney review for CROA and state credit-services laws, plus the client contract and disclosures.
+- **Education-only copy**: attorney review for CROA and state credit-services laws (including the DIY dispute letter templates and score simulator wording). Don't add outcome claims such as raising, boosting, improving, fixing, or repairing credit.
 - **Premium pricing**: shown as "Pricing coming soon".
 - **App Store / Google Play badges**: "Coming soon" placeholders. Once the app is live, replace them with the official badges and store links.
 
