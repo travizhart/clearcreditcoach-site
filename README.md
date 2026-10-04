@@ -7,6 +7,14 @@ Plain static HTML/CSS/JS with no build step, deployed to GitHub Pages by `.githu
 | Path | Page |
 |---|---|
 | `/` | Home: do-it-yourself hero (primary CTA buys the DIY Guide), how it works (5 steps), DIY Guide section, free checklist signup (MailerLite), learning paths, app features, Free vs. Premium, education-only section, FAQ |
+| `/learn/` | Learn hub: free credit report guides (CollectionPage + Breadcrumb schema) |
+| `/learn/dispute-credit-report-error-yourself/` | Article: how to dispute a credit report error yourself |
+| `/learn/credit-report-dispute-letter-template/` | Article: dispute letter template and what to include |
+| `/learn/common-credit-report-errors/` | Article: common credit report errors and how to spot them |
+| `/learn/after-you-dispute-credit-report/` | Article: what happens after you dispute (30/45-day timelines) |
+| `/learn/florida-credit-repair-laws/` | Article: Florida and federal credit repair laws (not legal advice) |
+| `/checklist/` | Free Credit Report Error Checklist landing page (same MailerLite form `dBNXgH`, PDF fallback in `<noscript>`) |
+| `/about/` | About Travis Hart and Clear Credit Coach (education-only; not a law firm or credit repair organization) |
 | `/coaching/` | Retired. A `noindex` meta-refresh stub that sends old links to the homepage |
 | `/privacy/` | Privacy Policy (**DRAFT template, pending legal review**) |
 | `/terms/` | Terms of Use (**DRAFT template, pending legal review**) |
@@ -34,7 +42,14 @@ Search the repo for `TODO`.
 python3 -m http.server 8000   # then open http://localhost:8000/
 ```
 
-All internal links are relative, so the site also works from a local preview or a subpath.
+The original pages use relative links. The SEO pages (`/learn/`, `/about/`, `/checklist/`) use root-relative links (`/assets/...`), so preview from the repo root (as above). A subpath preview won't style those pages.
+
+## SEO notes (Oct 2026)
+
+- **These HTML files are now the source of truth.** The older off-repo generator (`/workspace/ccc-site-build`) doesn't know about the SEO changes. Re-running it would overwrite the homepage title, H1, FAQ, nav, and sitemap. Port changes into it before using it again.
+- Articles: byline Travis Hart, a "Last updated" date, Article + BreadcrumbList JSON-LD, and a Sources list (CFPB/FTC/FCRA/Florida Statutes). When you edit an article, update the date in the byline, `dateModified`, and `<lastmod>` in `sitemap.xml`.
+- Compliance: education-only. No outcome claims. Say results vary and that accurate, timely information can legally stay on a report. Timelines: generally 30 days, up to 45 in some cases.
+- The homepage FAQ JSON-LD mirrors the visible FAQ. Keep the two in sync.
 
 ## Custom domain
 
