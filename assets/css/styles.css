@@ -421,3 +421,19 @@ ol.steps { list-style: none; padding: 0; margin: 0; }
 .plan li.is-featured { background: rgba(255,255,255,.1); border-radius: 14px; padding: 12px; box-shadow: inset 0 0 0 1px rgba(110,231,183,.45); }
 .plan li.is-featured strong { color: #fff; }
 @media (max-width: 1100px) { .steps--5 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } }
+
+/* v4: DIY guide (Gumroad) */
+.guide { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; background: var(--surface); border-radius: var(--r-xl); padding: clamp(20px, 3.5vw, 44px); box-shadow: var(--sh-card); border: 1px solid var(--border); }
+.guide-media img { display: block; width: 100%; height: auto; border-radius: var(--r-lg); box-shadow: var(--sh-raised); }
+.guide-body h2 { margin-bottom: .35em; }
+.guide-lead { color: var(--muted); margin-bottom: 20px; }
+.guide .check-list { margin-bottom: 24px; }
+.guide .check-list strong { color: var(--text); }
+.guide-buy { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; }
+.guide-price strong { display: block; font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.guide-price span { font-size: .85rem; color: var(--muted); font-weight: 600; }
+.guide-secure { display: flex; align-items: center; gap: 8px; margin: 14px 0 0; font-size: .85rem; color: var(--muted); font-weight: 600; }
+.guide-secure svg { color: var(--accent); flex: none; }
+.guide-disclaimer { margin: 16px 0 0; padding-top: 14px; border-top: 1px solid var(--border); font-size: .8rem; line-height: 1.55; color: var(--muted); }
+@media (max-width: 960px) { .guide { grid-template-columns: 1fr; } }
+.hero-note { flex-wrap: nowrap; align-items: flex-start; } .hero-note svg { flex: none; margin-top: 2px; }

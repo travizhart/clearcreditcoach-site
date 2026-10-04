@@ -6,12 +6,16 @@ Plain static HTML/CSS/JS with no build step, deployed to GitHub Pages by `.githu
 
 | Path | Page |
 |---|---|
-| `/` | Home: do-it-yourself hero, how it works (5 steps), learning paths, app features, Free vs. Premium, education-only section, waitlist, FAQ |
+| `/` | Home: do-it-yourself hero (primary CTA buys the DIY Guide), how it works (5 steps), DIY Guide section, learning paths, app features, Free vs. Premium, education-only section, waitlist, FAQ |
 | `/coaching/` | Retired. A `noindex` meta-refresh stub that sends old links to the homepage |
 | `/privacy/` | Privacy Policy (**DRAFT template, pending legal review**) |
 | `/terms/` | Terms of Use (**DRAFT template, pending legal review**) |
 
 `/privacy` and `/terms` (no trailing slash) redirect to the pages above, so either form works as the App Store / Google Play URL.
+
+## The DIY Guide (Gumroad)
+
+*The Do-It-Yourself Credit Report Guide* ($49, one-time) is sold at https://clearcoach.gumroad.com/l/diy-credit-guide and is the main thing to buy on the site while the app is coming soon. The URL, name, and price live in `GUIDE_URL`, `GUIDE_NAME`, and `GUIDE_PRICE` in the generator's `common.py`. The home page loads `https://gumroad.com/js/gumroad.js`, which opens Gumroad checkout in an overlay for any link to the product; without JavaScript the links go straight to the Gumroad page. The buy links deliberately do **not** use `class="gumroad-button"`, because Gumroad's overlay CSS restyles that class (font, radius, colors). Cover images: `assets/img/diy-guide-cover-{800,1200}.{webp,jpg}`.
 
 ## Before launch: placeholders to replace
 
