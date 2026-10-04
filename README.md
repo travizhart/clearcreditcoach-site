@@ -35,6 +35,14 @@ All internal links are relative, so the site works both at `https://clearcreditc
 
 ## Custom domain
 
-`CNAME` contains `clearcreditcoach.com`. For an Actions-based deploy, GitHub uses the custom domain set in **Settings → Pages**. The `CNAME` file is kept for reference and for branch-based deploys.
+`CNAME` contains `clearcreditcoach.com`. Because this site deploys with GitHub Actions, GitHub ignores that file and uses the domain entered in **Settings → Pages → Custom domain**.
+
+That setting is **not turned on yet**. As soon as it's set, GitHub redirects `travizhart.github.io/clearcreditcoach-site/` to `clearcreditcoach.com`, and the domain doesn't point to GitHub yet, so the preview URL would break. When you update DNS at GoDaddy, set the custom domain at the same time:
+
+```sh
+gh api -X PUT repos/travizhart/clearcreditcoach-site/pages -f cname=clearcreditcoach.com
+```
+
+(or type `clearcreditcoach.com` under Settings → Pages → Custom domain and click Save). Once the DNS check passes and the certificate is issued, tick **Enforce HTTPS**.
 
 The font is Plus Jakarta Sans (SIL Open Font License, see `assets/fonts/OFL.txt`) and is self-hosted.
