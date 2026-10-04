@@ -21,34 +21,7 @@
     });
   }
 
-  // Waitlist form.
-  // TODO(Travis): this is a PLACEHOLDER. It does not store emails anywhere; it opens the
-  // visitor's email app with a pre-filled message to the address in data-mailto.
-  // Replace with a real form backend (e.g. your email-marketing tool's embed form) before launch.
-  document.querySelectorAll('form[data-waitlist]').forEach(function (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var input = form.querySelector('input[type="email"]');
-      var status = form.parentElement.querySelector('.form-status');
-      var email = (input.value || '').trim();
-      var valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
-      if (!valid) {
-        if (status) { status.textContent = 'Please enter a valid email address.'; status.classList.add('is-error'); }
-        input.setAttribute('aria-invalid', 'true');
-        input.focus();
-        return;
-      }
-      input.removeAttribute('aria-invalid');
-      var to = form.getAttribute('data-mailto');
-      var subject = 'Clear Credit Coach app waitlist';
-      var body = 'Please add me to the Clear Credit Coach app waitlist.\n\nEmail: ' + email;
-      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      if (status) {
-        status.classList.remove('is-error');
-        status.textContent = 'Your email app should open with a pre-filled message. Just press send to join.';
-      }
-    });
-  });
+  // Free checklist signup is a MailerLite embedded form (see index.html); no custom JS needed.
 
   // Legal pages: collapse the table of contents on small screens
   var toc = document.querySelector('details.toc');

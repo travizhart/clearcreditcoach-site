@@ -6,7 +6,7 @@ Plain static HTML/CSS/JS with no build step, deployed to GitHub Pages by `.githu
 
 | Path | Page |
 |---|---|
-| `/` | Home: do-it-yourself hero (primary CTA buys the DIY Guide), how it works (5 steps), DIY Guide section, learning paths, app features, Free vs. Premium, education-only section, waitlist, FAQ |
+| `/` | Home: do-it-yourself hero (primary CTA buys the DIY Guide), how it works (5 steps), DIY Guide section, free checklist signup (MailerLite), learning paths, app features, Free vs. Premium, education-only section, FAQ |
 | `/coaching/` | Retired. A `noindex` meta-refresh stub that sends old links to the homepage |
 | `/privacy/` | Privacy Policy (**DRAFT template, pending legal review**) |
 | `/terms/` | Terms of Use (**DRAFT template, pending legal review**) |
@@ -21,7 +21,7 @@ Plain static HTML/CSS/JS with no build step, deployed to GitHub Pages by `.githu
 
 Search the repo for `TODO`.
 
-- **Waitlist form** (`index.html`, `assets/js/main.js`): it's a placeholder that opens the visitor's email app (mailto). It does not store emails. Replace it with a real form or email-marketing embed.
+- **Free checklist signup** (`index.html`, `#checklist`): MailerLite embedded form (account `2682931`, form `dBNXgH`). The universal script is in the home page `<head>`; the form renders client-side into `<div class="ml-embedded">`. Delivery of the checklist (`/downloads/credit-report-error-checklist.pdf`) and the welcome series are configured in MailerLite. The styles under `/* v5 */` in `styles.css` blend the form into the card.
 - **Contact email** `hello@clearcreditcoach.com` (all pages): being added as a Google Workspace alias.
 - **Privacy / Terms**: effective dates, legal business name, mailing address, governing-law state, retention periods, and attorney review. Remove the draft banner once they're final.
 - **Education-only copy**: attorney review for CROA and state credit-services laws (especially the do-it-yourself dispute positioning, letter templates, guided walkthrough, and score simulator wording). Don't add outcome claims such as raising, boosting, improving, fixing, or repairing credit, or removing or deleting items. Frame disputes as for inaccurate or incomplete information only.
